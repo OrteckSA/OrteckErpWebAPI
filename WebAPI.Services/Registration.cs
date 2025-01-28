@@ -12,6 +12,12 @@ using DAL.Services.CacheService;
 using DAL.Services.Stock;
 using DAL.Services.Common;
 using ERP.WebAPI.Services.Model;
+using ERP.Domain.UnitOfWork;
+using ERP.Repository.UnitOfWork;
+using System.Formats.Asn1;
+using Common.Domain.UnitOfWork;
+using ERP.Repository.Context;
+using ERP.Domain.Entity;
 
 namespace ERP.WebAPI.Services
 {
@@ -35,7 +41,15 @@ namespace ERP.WebAPI.Services
 
             //services.AddERPServices(configuration);
 
+            services.AddSingleton<UserContext>(new UserContext
+            {
+                CurrentUser = new User {  LoginName = "Admin" }
+            });
+
+            services.AddScoped<ERPContext>();
+            services.AddScoped<IErpUnitOfWork, ERPUnitOfWork>();
             services.AddScoped<BillService>();
+
             services.AddScoped<IBillTypeService, BillTypeService>();
             services.AddScoped<IMaterialService, MaterialService>();
             services.AddScoped<IMaterialComponentService, MaterialComponentService>();
@@ -50,7 +64,7 @@ namespace ERP.WebAPI.Services
             services.AddScoped<IProductionOrderService, ProductionOrderService>();
             services.AddSingleton<ICacheService, MemoryCacheService>();
 
-            
+
         }
     }
 }
