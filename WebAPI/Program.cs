@@ -21,28 +21,44 @@ builder.Services.SetServices(builder.Configuration);
 builder.Services.AddDataProtection()
         .PersistKeysToFileSystem(new DirectoryInfo(@"UNC-PATH"));
 
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "ERP WebAPI V1");
+        options.RoutePrefix = string.Empty; // To access Swagger at the root URL
+    });
+}
 
 app.UseStaticFiles();
 
-app.UseRouting();
+//app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllers();
 
 bool dbOk;
 using (var scope = app.Services.CreateScope())
 {
     dbOk = scope.ServiceProvider.GetService<CheckDatabaseService>().CheckDatabaseVersion();
-    if(!dbOk)
-        throw new Exception("Database version is not supported");
+    //if(!dbOk)
+        //throw new Exception("Database version is not supported");
 }
 
-app.UseHangfireDashboard("/hangfire", new DashboardOptions
-{
-    Authorization = new[] { new HangfireAuthorizationFilter() }
-});
+//app.UseHangfireDashboard("/hangfire", new DashboardOptions
+//{
+//    Authorization = new[] { new HangfireAuthorizationFilter() }
+//});
 
 //using (var scope = app.Services.CreateScope())
 //{

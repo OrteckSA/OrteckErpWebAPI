@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Services", "..\..\ERPFi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ERP.WebAPI.Services", "..\WebAPI.Services\ERP.WebAPI.Services.csproj", "{A5BD55C9-80AB-47AB-A92E-9FCD8D72DD05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.WebAPIs", "..\ERP.WebAPIs\ERP.WebAPIs.csproj", "{17647392-18B4-482D-BA9A-B41F2BA7A005}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A5BD55C9-80AB-47AB-A92E-9FCD8D72DD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5BD55C9-80AB-47AB-A92E-9FCD8D72DD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5BD55C9-80AB-47AB-A92E-9FCD8D72DD05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17647392-18B4-482D-BA9A-B41F2BA7A005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17647392-18B4-482D-BA9A-B41F2BA7A005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17647392-18B4-482D-BA9A-B41F2BA7A005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17647392-18B4-482D-BA9A-B41F2BA7A005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
