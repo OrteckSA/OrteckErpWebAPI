@@ -1,0 +1,40 @@
+﻿
+
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 6px 6px;
+    font-size: 12px;
+}
+
+
+table.dataTable tbody th, table.dataTable tbody td {
+    font-size: 12px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-size: 12px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    font-size: 12px;
+}
+
+.dataTables_length label {
+    font-size: 12px;
+}
+
+.btn-data-table {
+    font-size: 12px;
+}
+
+.label-bold {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.table-link {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+

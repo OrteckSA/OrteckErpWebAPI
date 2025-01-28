@@ -1,0 +1,11 @@
+
+.vs
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+*.rar
+/ERP_Integration/UNC-PATH
+*.log
