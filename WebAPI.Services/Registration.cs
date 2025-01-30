@@ -18,6 +18,7 @@ using System.Formats.Asn1;
 using Common.Domain.UnitOfWork;
 using ERP.Repository.Context;
 using ERP.Domain.Entity;
+using ERP.WebAPI.Services.AccountServices;
 
 namespace ERP.WebAPI.Services
 {
@@ -64,7 +65,7 @@ namespace ERP.WebAPI.Services
             services.AddScoped<IProductionOrderService, ProductionOrderService>();
             services.AddSingleton<ICacheService, MemoryCacheService>();
 
-
+            services.AddScoped<IUserServiceApi, UserServiceApi>();
         }
     }
 }
