@@ -1,10 +1,7 @@
-﻿using DAL.Services;
-using ERP.Domain.Entity;
+﻿using ERP.Domain.Entity;
 using ERP.Domain.UnitOfWork;
 using ERP.WebAPI.Dtos;
 using ERP.WebAPI.Services.AccountServices;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
