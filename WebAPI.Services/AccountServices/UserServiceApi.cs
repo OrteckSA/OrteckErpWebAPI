@@ -23,7 +23,7 @@ namespace ERP.WebAPI.Services.AccountServices
 
         public async Task<User> FindByCredentialAsync(string username, string password)
         {
-            password = HashPassword(password);
+            // Hash the password here
             User user = await _erpUnitOfWork.Repository<User>().GetAsync(u => u.LoginName == username && u.PASsword == password);
             return user;
         }
@@ -38,12 +38,6 @@ namespace ERP.WebAPI.Services.AccountServices
             // I just need the role name
             var roles = (await _erpUnitOfWork.Repository<Role>().GetListAsync(r => r.Assignments.Any(u => u.UserGUID == user.GUID))).Select(x => x.Name);
             return roles;
-        }
-
-        private string HashPassword(string password)
-        {
-            // Implement password hashing here
-            return password;
         }
     }
 }
